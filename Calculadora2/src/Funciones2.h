@@ -69,5 +69,10 @@ float muestreo(float num1, float num2);
  */
 float factorial(float numingresado);
 
+/**
+ * @brief: incorpora unas palabras al salir del programa.
+ */
+int salir();
+
 
 #endif /* FUNCIONES2_H_ */
