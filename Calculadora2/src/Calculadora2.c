@@ -11,6 +11,7 @@
 #include <stdio_ext.h>
 #include <stdlib.h>
 #include "Funciones2.h"
+#include <time.h>
 //#include <conio.h> windows
 
 
@@ -20,13 +21,10 @@ int main(void) {
 	float numero1;
 	float numero2;
 	int seguir = 0;
-	int seguir2 = 0;
 	int flagnumero1 = 0;
 	int flagnumero2 = 0;
 	int flagcalculadora = 0;
 
-
-	system("clear");
 	do {
 		//switch principal.
 		switch(menu()) {
@@ -43,43 +41,8 @@ int main(void) {
 			case 3:
 				if (flagnumero1 == 1 && flagnumero2 ==1) {
 					flagcalculadora = 1;
-					do {
-						//subswitch para el menu de las operaciones.
-						switch(calculadora(numero1, numero2)) {
-							case 1:
-								sumar(numero1, numero2);
-
-								break;
-							case 2:
-								resta(numero1, numero2);
-
-								break;
-							case 3:
-								multiplicacion(numero1, numero2);
-
-								break;
-							case 4:
-								division(numero1, numero2);
-
-								break;
-							case 5:
-								factorial(numero1);
-								factorial(numero2);
-
-								break;
-							case 6:
-								seguir2 = 1;
-
-								break;
-							default:
-								//por si ingresa una opcion que no este incluida en el menu de operaciones.
-								printf("ingrese una opcion valida!!\n\n");
-								break;
-
-						}
-						__fpurge(stdin);//fflush(stdin) windows.
-						getchar();//system("pause") windows.
-					}while (seguir2 == 0);
+					//incorporo una animacion para el momento de las operaciones.
+					animacioncase3(numero1, numero2);
 				} else {
 					//por si no ingresa un o los numeros a operar.
 					printf("falta ingresar un numero...\n\n");
@@ -88,12 +51,13 @@ int main(void) {
 			case 4:
 				//valida si ya realizo las operaciones.
 				if (flagcalculadora == 1){
+					//funcion que muestra los resultados de las operaciones.
+					muestreo (numero1, numero2);
 					//reset de flags
 					flagnumero1 = 0;
 					flagnumero2 = 0;
 					flagcalculadora = 0;
-					//funcion que muestra los resultados de las operaciones.
-					muestreo (numero1, numero2);
+
 				} else {
 					//por si elige la opcion sin haber hecho las operaciones.
 					printf("necesita hacer las operaciones antes de ver los resultados\n\n");

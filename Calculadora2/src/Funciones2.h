@@ -8,13 +8,6 @@
 #ifndef FUNCIONES2_H_
 #define FUNCIONES2_H_
 
-/**
- * @brief: incorpora un menu de calculos.
- * @param: num1 es el primer numero ingresado.
- * @param: num2 es el segundo numero ingresado.
- * @return: retorna la opcion escogida.
- */
-int calculadora(float num1, float num2);
 
 
 /**
@@ -60,7 +53,7 @@ float division(float num1, float num2);
 * @param: num1 es el primer numero ingresado.
 * @param: num2 es el primer numero ingresado.
 */
-float muestreo(float num1, float num2);
+int muestreo(float num1, float num2);
 
 /**
  * @brief: realiza el factotial de un numero flotante.
@@ -73,6 +66,13 @@ float factorial(float numingresado);
  * @brief: incorpora unas palabras al salir del programa.
  */
 int salir();
+
+/*
+ * @brief: incorpora una animacion para las operaciones.
+ * @param: num1 es el primer numero ingresado.
+ * @param: num2 es el segundo numero ingresado.
+ */
+int animacioncase3(float num1, float num2);
 
 
 #endif /* FUNCIONES2_H_ */
